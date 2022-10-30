@@ -20,6 +20,18 @@ const Total = (props) => {
   );
 }
 
+
+const Part = (props) => {
+  const description = props.description;
+  const exercise = props.exercise;
+
+  return (
+    <p>
+      {description} {exercise}
+    </p>
+  );
+}
+
 const Content = (props) => {
   const exercises = props.exercises;
   const parts = props.parts;
@@ -27,7 +39,7 @@ const Content = (props) => {
   return (
     <>
       {parts.map((parts, index) => (
-        <p key={index}>{parts} {exercises[index]}</p>
+        <Part key={index} description={parts} exercise={exercises[index]} />
       ))}
     </>
   );
